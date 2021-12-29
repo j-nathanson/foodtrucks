@@ -2,7 +2,9 @@ import React from "react";
 
 function Footer() {
     return (
-        <h1>Footer Goes Here</h1>
+        <div className="container-fluid bg-info">
+            <h1>Footer Goes Here</h1>
+        </div>
     )
 }
 
