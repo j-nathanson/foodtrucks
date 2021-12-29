@@ -1,4 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component }
+    from 'react';
+import Navigation from './NavigationComponent';
+import Footer from './FooterComponent';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {
     constructor(props) {
@@ -7,7 +11,11 @@ class Main extends Component {
 
     render() {
         return (
-            <h1>Main Goes here</h1>
+            <div>
+                <Navigation />
+                <h1>pages go here</h1>
+                <Footer />
+            </div>
         )
     }
 }
