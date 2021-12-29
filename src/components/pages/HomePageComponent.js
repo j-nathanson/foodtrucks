@@ -2,7 +2,12 @@ import React from "react";
 
 function HomePage() {
     return (
-        <h1>HomePage Goes Here</h1>
+        <div>
+            <h3>Hero</h3>
+            <h3>Image Text Left</h3>
+            <h3>Card Gallery img only</h3>
+            <h3>Image Text Right</h3>
+        </div>
     )
 }
 

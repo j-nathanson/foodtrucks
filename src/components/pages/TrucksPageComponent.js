@@ -2,7 +2,11 @@ import React from "react";
 
 function TrucksPage() {
     return (
-        <h1>TrucksPage Goes Here</h1>
+        <div>
+            <h3>Header</h3>
+            <h3>Card Gallery</h3>
+            <h3>Image Text Right</h3>
+        </div>
     )
 }
 

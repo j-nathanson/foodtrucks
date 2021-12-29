@@ -2,7 +2,11 @@ import React from "react";
 
 function CateringPage() {
     return (
-        <h1>CateringPage Goes Here</h1>
+        <div>
+            <h3>Carousel</h3>
+            <h3>Price Estimator</h3>
+            <h3>Modal</h3>
+        </div>
     )
 }
 
