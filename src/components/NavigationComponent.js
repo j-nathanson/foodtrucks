@@ -5,6 +5,7 @@ import {
     Form, FormGroup, Input, Label
 } from "reactstrap";
 import { NavLink, Link } from 'react-router-dom';
+import '../styles/Navigation.scss'
 class Navigation extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +21,7 @@ class Navigation extends Component {
     }
     render() {
         return (
-            <Navbar dark sticky="top" expand="md" className="bg-info">
+            <Navbar dark sticky="top" expand="md">
                 <div className="container">
                     <NavbarBrand className="mr-auto" href="/">
 
