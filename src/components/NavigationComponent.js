@@ -5,7 +5,7 @@ import {
     Form, FormGroup, Input, Label
 } from "reactstrap";
 import { NavLink, Link } from 'react-router-dom';
-import '../styles/Navigation.scss'
+
 class Navigation extends Component {
     constructor(props) {
         super(props);
