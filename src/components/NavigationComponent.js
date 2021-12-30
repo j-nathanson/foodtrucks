@@ -20,13 +20,12 @@ class Navigation extends Component {
     }
     render() {
         return (
-            <Navbar dark sticky="top" expand="md" className="bg-dark">
+            <Navbar dark sticky="top" expand="md" className="bg-info">
                 <div className="container">
-
                     <NavbarBrand className="mr-auto" href="/">
 
                         <img src="assets/images/logo.svg" alt="Logo" className="mr-2" width={40} height={40} />
-                        Foodies Trucks
+                        Foodies Trucks NYC
                     </NavbarBrand>
 
                     <NavbarToggler onClick={this.toggleNav} />
