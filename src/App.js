@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import Main from './components/MainComponent';
-
-
+import 'font-awesome/css/font-awesome.css';
+import 'bootstrap-social/bootstrap-social.css';
 function App() {
 
   return (

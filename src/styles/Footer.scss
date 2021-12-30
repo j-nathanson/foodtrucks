@@ -1,5 +1,16 @@
 @import 'colors';
 
-footer{
+footer {
     background-color: $primary;
+    color: $white;
+ 
+
+    a {
+        color: $white;
+    }
+
+    a:hover {
+        color: $secondary;
+        text-decoration: none;
+    }
 }
