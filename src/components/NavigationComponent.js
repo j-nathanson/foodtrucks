@@ -24,7 +24,6 @@ class Navigation extends Component {
             <Navbar dark sticky="top" expand="md">
                 <div className="container">
                     <NavbarBrand className="mr-auto" href="/">
-
                         <img src="assets/images/logo.svg" alt="Logo" className="mr-2" width={40} height={40} />
                         Foodies Trucks NYC
                     </NavbarBrand>

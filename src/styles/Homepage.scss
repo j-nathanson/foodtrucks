@@ -1,0 +1,21 @@
+@import 'colors';
+
+.jumbotron {
+    background-image: url('../../public/assets/images/jumbotron-img.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0px !important;
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+
+    .container {
+        background-color: $jumbo-overlay;
+        color: $white;
+        text-align: center;
+        padding: 1rem;
+    }
+}
