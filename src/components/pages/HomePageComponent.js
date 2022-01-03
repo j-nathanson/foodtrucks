@@ -10,9 +10,9 @@ function HomePage(props) {
     return (
         <div className="">
            <JumbotronComponent/>
-            <ImgTextBox textObject={props.textObject}/>
+            <ImgTextBox textObject={props.textObjects[0]}/>
             <h3>Card Gallery img only</h3>
-            <h3>Image Text Right</h3>
+            <ImgTextBox textObject={props.textObjects[1]}/>
         </div>
     )
 }

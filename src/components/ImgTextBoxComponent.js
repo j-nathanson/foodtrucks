@@ -15,11 +15,14 @@ function ImgTextBox(props) {
                 </Col>
                 <Col sm="5">
                     <p>{props.textObject.description}</p>
-                    <Link to={props.textObject.buttonLink}>
-                        <Button className={props.textObject.showButton}>
-                            {props.textObject.buttonText}
-                        </Button>
-                    </Link>
+                    <Row className="justify-content-center">
+                        <Link to={props.textObject.buttonLink}>
+                            <Button className={props.textObject.showButton}>
+                                {props.textObject.buttonText}
+                            </Button>
+                        </Link>
+                    </Row>
+
                 </Col>
             </Row>
         </Container>

@@ -1,11 +1,12 @@
 @import 'colors';
 
-.img-text-left {
-    background-color: $secondary;
-    color: $white;
+.img-text-right {
+    background-color: $white;
+    color: $black;
     padding: 1.5rem;
 
     h2 {
+        color: $primary;
         font-size: 3rem;
         margin-bottom: 30px;
     }
@@ -15,8 +16,8 @@
     }
 
     .img-thumbnail {
-        background-color: $primary;
-        border-color: $primary;
+        background-color: $secondary;
+        border-color: $secondary;
     }
 
     p {
@@ -25,7 +26,7 @@
 }
 
 @media screen and (min-width: 800px) {
-    .img-text-left {
+    .img-text-right {
         p {
             font-size: 1.5rem;
         }
