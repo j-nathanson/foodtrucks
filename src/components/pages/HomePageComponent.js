@@ -2,7 +2,7 @@ import React from "react";
 import { Jumbotron, Button, Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import JumbotronComponent from "../JumbotronComponent";
-import ImgTextLeft from "../ImgTextLeftComponent";
+import ImgTextBox from "../ImgTextBoxComponent";
 
 
 function HomePage(props) {
@@ -10,7 +10,7 @@ function HomePage(props) {
     return (
         <div className="">
            <JumbotronComponent/>
-            <ImgTextLeft/>
+            <ImgTextBox textObject={props.textObject}/>
             <h3>Card Gallery img only</h3>
             <h3>Image Text Right</h3>
         </div>

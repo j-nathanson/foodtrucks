@@ -6,13 +6,14 @@ import CateringPage from './pages/CateringPageComponent';
 import TrucksPage from './pages/TrucksPageComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import FOODTRUCKS from '../shared/foodtrucks';
-
+import TEXTOBJECTS from '../shared/textobjects';
 class Main extends Component {
     constructor(props) {
         super(props);
 
-        this.state ={
-            foodtrucks:FOODTRUCKS
+        this.state = {
+            foodTrucks: FOODTRUCKS,
+            textObjects: TEXTOBJECTS
         }
     }
 
@@ -21,8 +22,8 @@ class Main extends Component {
             <div>
                 <Navigation />
                 <Switch>
-    
-                    <Route path ='/home' render={()=> <HomePage foodtrucks ={this.state.foodtrucks}/>}/>
+
+                    <Route path='/home' render={() => <HomePage foodTrucks={this.state.foodtrucks} textObject={this.state.textObjects[0]}/>} />
                     <Route path='/catering' component={CateringPage} />
                     <Route path='/ourtrucks' component={TrucksPage} />
                     <Redirect to='/home' />
