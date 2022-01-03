@@ -3,7 +3,8 @@ import { Jumbotron, Button, Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
 
-function HomePage() {
+function HomePage(props) {
+    
     return (
         <div className="">
             <Jumbotron >
@@ -31,8 +32,6 @@ function HomePage() {
                     </Col>
 
                 </Row>
-
-
             </Container>
             <h3>Card Gallery img only</h3>
             <h3>Image Text Right</h3>
