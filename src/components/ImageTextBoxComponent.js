@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 
-function ImgTextBox(props) {
+function ImageTextBox(props) {
 
     return (
         <Container fluid className={props.textObject.style} key={props.textObject.id}>
@@ -29,4 +29,4 @@ function ImgTextBox(props) {
     )
 }
 
-export default ImgTextBox;
+export default ImageTextBox;

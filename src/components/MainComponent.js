@@ -23,7 +23,7 @@ class Main extends Component {
                 <Navigation />
                 <Switch>
 
-                    <Route path='/home' render={() => <HomePage foodTrucks={this.state.foodtrucks} textObjects={this.state.textObjects}/>} />
+                    <Route path='/home' render={() => <HomePage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects}/>} />
                     <Route path='/catering' component={CateringPage} />
                     <Route path='/ourtrucks' component={TrucksPage} />
                     <Redirect to='/home' />

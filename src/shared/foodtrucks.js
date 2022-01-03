@@ -26,7 +26,7 @@ const FOODTRUCKS = [
     {
         id: 4,
         name: "Tacos El Bronco",
-        imgMain: "/assets/images/el-bronco-1.jpeg",
+        imgMain: "/assets/images/el-bronco-1.jpg",
         imgCard: "/assets/images/el-bronco-2.jpeg",
         menu: "http://places.singleplatform.com/tacos-el-bronco-restaurant/menu",
         rating: 4
