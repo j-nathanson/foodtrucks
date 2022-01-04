@@ -3,18 +3,8 @@ import { Link } from "react-router-dom";
 import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
 
 
-
-// <Card>
-// <Link to={`/directory/${campsite.id}`}>
-//     <CardImg width='100%' src={campsite.image} alt={campsite.name} />
-//     <CardImgOverlay>
-//         <CardTitle>{campsite.name}</CardTitle>
-//     </CardImgOverlay>
-// </Link>
-// </Card>
-
 const renderCard = (foodTruck) => {
-    console.log(foodTruck);
+  
     return (
         <Link className=" col-sm-6 col-md-4 p-1" to="/ourtrucks">
             <Card key={foodTruck.id}>

@@ -7,13 +7,15 @@ import TrucksPage from './pages/TrucksPageComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import FOODTRUCKS from '../shared/foodtrucks';
 import TEXTOBJECTS from '../shared/textobjects';
+import CAROUSEL_ITEMS from '../shared/carousel';
 class Main extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             foodTrucks: FOODTRUCKS,
-            textObjects: TEXTOBJECTS
+            textObjects: TEXTOBJECTS,
+            carouselItems: CAROUSEL_ITEMS
         }
     }
 
@@ -23,8 +25,8 @@ class Main extends Component {
                 <Navigation />
                 <Switch>
 
-                    <Route path='/home' render={() => <HomePage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects}/>} />
-                    <Route path='/catering' component={CateringPage} />
+                    <Route path='/home' render={() => <HomePage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
+                    <Route path='/catering' render={() => <CateringPage carouselItems={this.state.carouselItems} />} />
                     <Route path='/ourtrucks' component={TrucksPage} />
                     <Redirect to='/home' />
                 </Switch>

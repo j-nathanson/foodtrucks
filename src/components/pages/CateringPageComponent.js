@@ -1,9 +1,10 @@
 import React from "react";
+import CarouselComponent from "../CarouselComponent"
 
-function CateringPage() {
+function CateringPage(props) {
     return (
-        <div className="container bg-success">
-            <h3>Carousel</h3>
+        <div classNameName="container-fluid">
+            <CarouselComponent carouselItems={props.carouselItems}/>
             <h3>Price Estimator</h3>
             <h3>Modal</h3>
         </div>
