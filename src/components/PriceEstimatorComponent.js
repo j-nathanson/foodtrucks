@@ -108,7 +108,7 @@ class PriceEstimator extends Component {
 
                     <span>${this.state.totalCost}-</span> <span>{this.state.totalCostHigh}</span>
                 </div>
-                <Button>modal button</Button>
+                
             </div>
         )
     }

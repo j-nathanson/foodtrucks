@@ -1,6 +1,7 @@
 import React from "react";
 import CarouselComponent from "../CarouselComponent";
-import PriceEstimator from "../PriceEstimatorComponent"
+import PriceEstimator from "../PriceEstimatorComponent";
+import CateringModal from "../CateringModalComponent";
 
 function CateringPage(props) {
     return (
@@ -9,6 +10,7 @@ function CateringPage(props) {
             <div className="row">
                 <PriceEstimator />
             </div>
+            <CateringModal/>
 
         </div>
     )
