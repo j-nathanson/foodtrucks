@@ -1,5 +1,12 @@
+@import 'colors';
+
 .carousel-item {
     img {
         width: 100%;
     }
+}
+
+.carousel-caption {
+    color: black;
+    background: rgba(236, 236, 236, .5);
 }

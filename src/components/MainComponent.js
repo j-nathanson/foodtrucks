@@ -26,7 +26,7 @@ class Main extends Component {
                 <Switch>
 
                     <Route path='/home' render={() => <HomePage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
-                    <Route path='/catering' render={() => <CateringPage carouselItems={this.state.carouselItems} />} />
+                    <Route path='/catering' render={() => <CateringPage carouselItems={this.state.carouselItems} textObjects={this.state.textObjects} />} />
                     <Route path='/ourtrucks' component={TrucksPage} />
                     <Redirect to='/home' />
                 </Switch>

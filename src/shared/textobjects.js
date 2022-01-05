@@ -1,6 +1,6 @@
 const TEXTOBJECTS = [
     {
-        id: 1,
+        id: 0,
         heading: "Who We Are",
         img: "assets/images/hamburger.jpg",
         alt:"Hamburger",
@@ -12,7 +12,7 @@ const TEXTOBJECTS = [
         buttonLink:""
     },
     {
-        id: 2,
+        id: 1,
         heading: "Want Catering?",
         img: "assets/images/catering-1.jpeg",
         alt:"Hamburger",
@@ -24,7 +24,7 @@ const TEXTOBJECTS = [
         buttonLink:"/catering"
     },
     {
-        id: 3,
+        id: 2,
         heading: "We do Catering!",
         img: "assets/images/catering-2.jpeg",
         alt:"Hamburger",
@@ -34,6 +34,18 @@ const TEXTOBJECTS = [
         showButton: "btn-info btn-lg",
         buttonText: "Start Here",
         buttonLink:"/catering"
+    },
+    {
+        id: 3,
+        heading: "Imagine the smiles at your next event!",
+        img: "assets/images/food-truck-line.jpg",
+        alt:"Hamburger",
+        imgOrder: "order-sm-last",
+        style: "img-text-left-switch",
+        description: "Any party, and any budget! Checkout below to get an estimate on your next great event.",
+        showButton: "d-none",
+        buttonText: "",
+        buttonLink:""
     },
 
 ]
