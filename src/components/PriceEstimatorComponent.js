@@ -63,8 +63,6 @@ class PriceEstimator extends Component {
 
         if (this.state.sideCost === 150 || this.state.sideCost === 0) {
             laborCost += this.state.sideCost;
-        }else{
-            
         }
         this.setState(
             { totalCost: laborCost }
