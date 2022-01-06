@@ -1,3 +1,5 @@
+@import "colors";
+
 .startGuest {
     text-align: right;
 }
@@ -10,4 +12,24 @@
 .startGuest,
 .endGuest {
     padding: 0;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.price-estimator-heading {
+    color: $primary;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.price-estimator-guests {
+    color: $secondary;
+}
+
+.total-cost {
+    color: $secondary;
+    font-size: 2.5rem;
 }

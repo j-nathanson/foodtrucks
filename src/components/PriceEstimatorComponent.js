@@ -108,28 +108,32 @@ class PriceEstimator extends Component {
     render() {
         const isSideActive = this.state.isSideChecked;
         const isEntreeActive = this.state.isEntreeChecked;
-        const isDessertActive = this.state.isEntreeChecked;
+        const isDessertActive = this.state.isDessertChecked;
         return (
             <div className="container-fluid price-estimator p-5">
                 <div className="row justify-content-center">
-                    <h1>price estimator</h1>
+                    <h1 className="price-estimator-heading">price estimator</h1>
                 </div>
-                <div className="row justify-content-center"> number of guests: {this.state.sliderGuestValue}
+                <div className="row justify-content-center">
+                    <h3>number of guests: <span className="price-estimator-guests">{this.state.sliderGuestValue}</span></h3>
                 </div>
-                <div className="row">
+                <div className="row my-5">
                     <div className="col-2 startGuest">
                         <span>50</span>
                     </div>
-                    <div className="col-8"> <input type="range" className="mb-4" min="50" max="500" id="slide" step="10" value={this.state.sliderGuestValue} onChange={this.handleSliderChange} />
+                    <div className="col-8">
+                        <input type="range"
+                            min="50" max="500" id="slide" step="10"
+                            value={this.state.sliderGuestValue}
+                            onChange={this.handleSliderChange} />
                     </div>
                     <div className="col-2 endGuest">
                         <span>500</span>
                     </div>
                 </div>
 
-
-                <div className="row">
-                    <div className="col-8 col-md-6 mx-auto d-flex justify-content-around border">
+                <div className="row mb-4">
+                    <div className="col-8 col-md-6 mx-auto btn-box">
                         <Button
                             onClick={this.toggleIsSideChecked}
                             size="lg"
@@ -152,12 +156,12 @@ class PriceEstimator extends Component {
                 </div>
 
                 <div className="row justify-content-center">
-                    <h3>approximate cost</h3>
+                    <h2>approximate cost</h2>
                 </div>
                 <div className="row justify-content-center">
-
-                    <span>${this.state.totalCost}</span>
+                    <span className="total-cost"> ${this.state.totalCost}</span>
                 </div>
+
 
             </div>
         )

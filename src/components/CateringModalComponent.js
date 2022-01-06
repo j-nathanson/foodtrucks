@@ -30,7 +30,7 @@ class CateringModal extends Component {
     render() {
         return (
             <div className="container">
-                <div className="row justify-content-center">
+                <div className="row justify-content-center toggle-modal-btn">
                     <Button onClick={this.toggleModal} color="info" className="btn-lg mb-3">Start Here</Button>
                 </div>
 
