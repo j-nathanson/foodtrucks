@@ -5,11 +5,8 @@ class PriceEstimator extends Component {
     constructor(props) {
         super(props)
 
-        // sideCost, entreeCost, and dessertCost are initialized to 0 but should change to 150, 200, and 250 respectively
+
         this.state = {
-            sideCost: 0,
-            entreeCost: 0,
-            dessertCost: 0,
             costPerGuest: 14,
             totalCost: 700,
             sliderGuestValue: 50,
@@ -36,18 +33,18 @@ class PriceEstimator extends Component {
     }
     // when clicked store the opposite boolean value in a const. Then if true, update the sideCost to 150, else update it to 0. 
     toggleIsSideChecked = () => {
-        const sideBoolean = !this.state.isSideChecked
+        const sideBoolean = !this.state.isSideChecked;
+        const currentGuestCount = this.state.sliderGuestValue
+
         if (sideBoolean) {
-            console.log("is true");
             this.setSideCost(150);
-            console.log("sideCost has changed to ", this.state.sideCost)
         } else {
             this.setSideCost(0);
-            console.log("is false");
         }
         this.setState(
             { isSideChecked: sideBoolean }
         )
+        this.computeCost(currentGuestCount);
     }
 
     // the total cost should equal the "number of guest" multiplied by the "cost per guess". Then add any additional costs. 
@@ -60,12 +57,15 @@ class PriceEstimator extends Component {
         console.log("COST PER GUEST " + this.state.costPerGuest)
         console.log("SIDE COST " + this.state.sideCost)
 
-        let laborCost = (this.state.costPerGuest * numGuest);
+        const costPerGuest = this.state.costPerGuest;
+        let laborCost = costPerGuest * numGuest;
         console.log("LABOR COST " + laborCost);
 
-
-        laborCost += this.state.sideCost;
-
+        if (this.state.sideCost === 150 || this.state.sideCost === 0) {
+            laborCost += this.state.sideCost;
+        }else{
+            
+        }
         this.setState(
             { totalCost: laborCost }
         )
@@ -108,7 +108,7 @@ class PriceEstimator extends Component {
 
                     <span>${this.state.totalCost}-</span> <span>{this.state.totalCostHigh}</span>
                 </div>
-                
+
             </div>
         )
     }
