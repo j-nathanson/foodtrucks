@@ -1,0 +1,41 @@
+@import 'colors';
+
+.fa-star {
+    color: $starColor;
+}
+
+.fa-yelp {
+    color: $yelpColor;
+}
+
+.truck-info-card {
+   
+    .card-img {
+        width: 100%;
+        height: 50vw;
+        object-fit: cover;
+    }
+
+    .card-header {
+        color: $white;
+        background-color: $secondary;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .truck-info-card {
+        .card-img {
+            height: 30vw;
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .truck-info-card {
+        .card-img {
+            height: 20vw;
+        }
+    }
+
+}
