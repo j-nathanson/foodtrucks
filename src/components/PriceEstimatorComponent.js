@@ -11,8 +11,11 @@ class PriceEstimator extends Component {
             totalCost: 700,
             sliderGuestValue: 50,
             isSideChecked: false,
-            isEntreesChecked: false,
-            isDessertsChecked: false,
+            isEntreeChecked: false,
+            isDessertChecked: false,
+            sideCost: 0,
+            entreeCost: 0,
+            dessertCost: 0
 
         }
     }
@@ -26,43 +29,76 @@ class PriceEstimator extends Component {
         this.computeCost(guestNum);
     }
 
+//    Update state's cost for additional items and compute a new total cost
+    setSideCost = (newSideCost) => {
+        const currentGuestCount = this.state.sliderGuestValue;
+        const currentEntreeCost = this.state.entreeCost;
+        const currentDessertCost = this.state.dessertCost;
 
-    // change sideCost
-    setSideCost = (cost) => {
-        this.setState({ sideCost: cost })
+        this.setState({ sideCost: newSideCost });
+        this.computeCost(currentGuestCount, newSideCost, currentEntreeCost, currentDessertCost);
     }
-    // when clicked store the opposite boolean value in a const. Then if true, update the sideCost to 150, else update it to 0. 
+    setEntreeCost = (newEntreeCost) => {
+        const currentGuestCount = this.state.sliderGuestValue;
+        const currentSideCost = this.state.sideCost;
+        const currentDessertCost = this.state.dessertCost;
+
+        this.setState({ entreeCost: newEntreeCost });
+        this.computeCost(currentGuestCount, currentSideCost, newEntreeCost, currentDessertCost);
+    }
+    setDessertCost = (newDessertCost) => {
+        const currentGuestCount = this.state.sliderGuestValue;
+        const currentSideCost = this.state.sideCost;
+        const currentEntreeCost = this.state.entreeCost;
+
+        this.setState({ dessertCost: newDessertCost });
+        this.computeCost(currentGuestCount, currentSideCost, currentEntreeCost, newDessertCost);
+    }
+
+    // togglers check and update boolean values, and call the setters
     toggleIsSideChecked = () => {
         const sideBoolean = !this.state.isSideChecked;
-        const currentGuestCount = this.state.sliderGuestValue
 
-        if (sideBoolean) {
-            this.setSideCost(150);
-        } else {
-            this.setSideCost(0);
-        }
+        sideBoolean ? this.setSideCost(150) : this.setSideCost(0);
+
         this.setState(
             { isSideChecked: sideBoolean }
         )
-        this.computeCost(currentGuestCount);
+    }
+    toggleIsEntreeChecked = () => {
+        const entreeBoolean = !this.state.isEntreeChecked;
+
+
+        entreeBoolean ? this.setEntreeCost(200) : this.setEntreeCost(0);
+
+        this.setState(
+            { isEntreeChecked: entreeBoolean }
+        )
+    }
+    toggleIsDessertChecked = () => {
+        const dessertBoolean = !this.state.isDessertChecked;
+
+        dessertBoolean ? this.setDessertCost(100) : this.setDessertCost(0);
+
+        this.setState(
+            { isDessertChecked: dessertBoolean }
+        )
     }
 
-    // the total cost should equal the "number of guest" multiplied by the "cost per guess". Then add any additional costs. 
-
-    // For example, if we have 50 guests and the cost per person is $14, then the product of these two is $700. Then if the 'sides' checkbox is not clicked then sideCost should equal '0' so $700 + 0 = $700.
-
-    //if the 'sides' checkbox is clicked then sideCost should equal $150, so 700+150 = $850
-    computeCost = (numGuest) => {
-        console.log("GUEST NUMBER " + numGuest)
-        console.log("COST PER GUEST " + this.state.costPerGuest)
-        console.log("SIDE COST " + this.state.sideCost)
+    // Use the state to commpute labor cost plus any extra costs
+    computeCost = (numGuest, sideCost = this.state.sideCost, entreeCost = this.state.entreeCost, dessertCost = this.state.dessertCost) => {
 
         const costPerGuest = this.state.costPerGuest;
         let laborCost = costPerGuest * numGuest;
-        console.log("LABOR COST " + laborCost);
 
-        if (this.state.sideCost === 150 || this.state.sideCost === 0) {
-            laborCost += this.state.sideCost;
+        if (sideCost) {
+            laborCost += sideCost;
+        }
+        if (entreeCost) {
+            laborCost += entreeCost;
+        }
+        if (dessertCost) {
+            laborCost += dessertCost;
         }
         this.setState(
             { totalCost: laborCost }
@@ -92,11 +128,11 @@ class PriceEstimator extends Component {
 
                 <div className="row justify-content-center">
                     <label htmlFor="sides" className="ml-1">Sides</label>
-                    <input type="checkbox" onChange={this.toggleIsSideChecked} name="test" id="sides"></input>
+                    <input type="checkbox" onChange={this.toggleIsSideChecked} name="test" id="side" />
                     <label htmlFor="entrees" className="ml-1">Entrees</label>
-                    <input type="checkbox" onChange={this.toggleIsEntreesChecked} name="test" id="entrees" />
+                    <input type="checkbox" onChange={this.toggleIsEntreeChecked} name="test" id="entree" />
                     <label htmlFor="desserts" className="ml-1">Desserts</label>
-                    <input type="checkbox" onChange={this.toggleIsDessertsChecked} name="test" id="Desserts" />
+                    <input type="checkbox" onChange={this.toggleIsDessertChecked} name="test" id="dessert" />
                 </div>
 
                 <div className="row justify-content-center">
@@ -104,7 +140,7 @@ class PriceEstimator extends Component {
                 </div>
                 <div className="row justify-content-center">
 
-                    <span>${this.state.totalCost}-</span> <span>{this.state.totalCostHigh}</span>
+                    <span>${this.state.totalCost}</span>
                 </div>
 
             </div>
