@@ -29,7 +29,7 @@ class PriceEstimator extends Component {
         this.computeCost(guestNum);
     }
 
-//    Update state's cost for additional items and compute a new total cost
+    //    Update state's cost for additional items and compute a new total cost
     setSideCost = (newSideCost) => {
         const currentGuestCount = this.state.sliderGuestValue;
         const currentEntreeCost = this.state.entreeCost;
@@ -68,7 +68,6 @@ class PriceEstimator extends Component {
     toggleIsEntreeChecked = () => {
         const entreeBoolean = !this.state.isEntreeChecked;
 
-
         entreeBoolean ? this.setEntreeCost(200) : this.setEntreeCost(0);
 
         this.setState(
@@ -85,7 +84,7 @@ class PriceEstimator extends Component {
         )
     }
 
-    // Use the state to commpute labor cost plus any extra costs
+    // Use the state to compute labor cost plus any extra costs
     computeCost = (numGuest, sideCost = this.state.sideCost, entreeCost = this.state.entreeCost, dessertCost = this.state.dessertCost) => {
 
         const costPerGuest = this.state.costPerGuest;
@@ -107,6 +106,9 @@ class PriceEstimator extends Component {
 
 
     render() {
+        const isSideActive = this.state.isSideChecked;
+        const isEntreeActive = this.state.isEntreeChecked;
+        const isDessertActive = this.state.isEntreeChecked;
         return (
             <div className="container-fluid price-estimator p-5">
                 <div className="row justify-content-center">
@@ -126,13 +128,27 @@ class PriceEstimator extends Component {
                 </div>
 
 
-                <div className="row justify-content-center">
-                    <label htmlFor="sides" className="ml-1">Sides</label>
-                    <input type="checkbox" onChange={this.toggleIsSideChecked} name="test" id="side" />
-                    <label htmlFor="entrees" className="ml-1">Entrees</label>
-                    <input type="checkbox" onChange={this.toggleIsEntreeChecked} name="test" id="entree" />
-                    <label htmlFor="desserts" className="ml-1">Desserts</label>
-                    <input type="checkbox" onChange={this.toggleIsDessertChecked} name="test" id="dessert" />
+                <div className="row">
+                    <div className="col-8 col-md-6 mx-auto d-flex justify-content-around border">
+                        <Button
+                            onClick={this.toggleIsSideChecked}
+                            size="lg"
+                            className={isSideActive ? "btn-info" : "btn-light btn-outline-info"}>
+                            Sides
+                        </Button>
+                        <Button
+                            onClick={this.toggleIsEntreeChecked}
+                            size="lg"
+                            className={isEntreeActive ? "btn-info" : "btn-light btn-outline-info"}>
+                            Entrees
+                        </Button>
+                        <Button
+                            onClick={this.toggleIsDessertChecked}
+                            size="lg"
+                            className={isDessertActive ? "btn-info" : "btn-light btn-outline-info"}>
+                            Dessert
+                        </Button>
+                    </div>
                 </div>
 
                 <div className="row justify-content-center">
