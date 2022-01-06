@@ -25,7 +25,7 @@ function ImageGallery(props) {
     const directory = props.foodTrucks.map(foodTruck => renderCard(foodTruck))
 
     return (
-        <div className="container-fluid bg-info">
+        <div className="container-fluid bg-info image-gallery">
             <div className="row text-center justify-content-center">
                 <h2>Our Trucks</h2>
             </div>

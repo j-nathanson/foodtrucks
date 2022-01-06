@@ -1,11 +1,18 @@
 import React from "react";
+import ImageTextBox from "../ImageTextBoxComponent";
+import TruckInfoCard from "../TruckInfoCardComponent";
 
-function TrucksPage() {
+function TrucksPage(props) {
     return (
-        <div className="container bg-warning">
+        <div className="container-fluid">
             <h3>Header</h3>
-            <h3>Card Gallery</h3>
-            <h3>Image Text Right</h3>
+            <div className="row">
+            <TruckInfoCard />
+            <TruckInfoCard />
+            <TruckInfoCard />
+            </div>
+            
+            <ImageTextBox textObject={props.textObjects[2]}></ImageTextBox>
         </div>
     )
 }
