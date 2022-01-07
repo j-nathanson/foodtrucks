@@ -111,7 +111,7 @@ class PriceEstimator extends Component {
         const isDessertActive = this.state.isDessertChecked;
         return (
             <div className="container-fluid price-estimator p-5">
-                <div className="row justify-content-center">
+                <div className="row justify-content-center text-center">
                     <h1 className="price-estimator-heading">price estimator</h1>
                 </div>
                 <div className="row justify-content-center">
@@ -132,8 +132,13 @@ class PriceEstimator extends Component {
                     </div>
                 </div>
 
-                <div className="row mb-4">
+                <div className="row justify-content-center">
+                    <h3>what will you serve?</h3>
+                </div>
+
+                <div className="row mb-5">
                     <div className="col-8 col-md-6 mx-auto btn-box">
+
                         <Button
                             onClick={this.toggleIsSideChecked}
                             size="lg"
@@ -152,6 +157,7 @@ class PriceEstimator extends Component {
                             className={isDessertActive ? "btn-info" : "btn-light btn-outline-info"}>
                             Dessert
                         </Button>
+
                     </div>
                 </div>
 
