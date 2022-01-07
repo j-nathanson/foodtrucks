@@ -16,6 +16,10 @@ footer {
         color: $secondary;
         text-decoration: none;
     }
+}
 
-
+@media (max-width: 400px) {
+    .links-container {
+        display: none !important;
+    }
 }
