@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-// import "../styles/Footer.scss";
-
 
 function Footer() {
     return (
@@ -22,10 +20,10 @@ function Footer() {
                             <h5>Social</h5>
                         </div>
                         <div className="d-flex justify-content-center">
-                            <a className="btn btn-lg btn-social-icon btn-instagram" href="http://instagram.com/"><i className="fa fa-instagram" /></a>{' '}
-                            <a className="btn btn-lg btn-social-icon btn-facebook" href="http://www.facebook.com/"><i className="fa fa-facebook" /></a>{' '}
-                            <a className="btn btn-lg btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter" /></a>{' '}
-                            <a className="btn btn-lg btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube" /></a>
+                            <a href="http://instagram.com/" target="_blank" rel="noreferrer" className="btn btn-lg"><i className="fa fa-instagram fa-2x"></i></a>
+                            <a href="http://facebook.com/" target="_blank" rel="noreferrer" className="btn btn-lg"><i className="fa fa-facebook fa-2x"></i></a>
+                            <a href="http://twitter.com/" target="_blank" rel="noreferrer" className="btn btn-lg"><i className="fa fa-twitter fa-2x"></i></a>
+                            <a href="http://youtube.com/" target="_blank" rel="noreferrer" className="btn btn-lg"><i className="fa fa-youtube fa-2x"></i></a>
                         </div>
                     </div>
                 </div >
@@ -35,3 +33,4 @@ function Footer() {
 }
 
 export default Footer;
+

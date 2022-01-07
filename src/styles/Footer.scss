@@ -4,14 +4,18 @@ footer {
     background-color: $primary;
     color: $white;
     padding: 1rem;
- 
 
-    a {
+
+    a,
+    i {
         color: $white;
     }
 
-    a:hover {
+    a:hover,
+    i:hover {
         color: $secondary;
         text-decoration: none;
     }
+
+
 }
