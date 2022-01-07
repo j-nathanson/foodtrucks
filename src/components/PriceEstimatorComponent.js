@@ -137,8 +137,7 @@ class PriceEstimator extends Component {
                 </div>
 
                 <div className="row mb-5">
-                    <div className="col-8 col-md-6 mx-auto btn-box">
-
+                    <div className="col-12 col-sm-8 col-md-6 mx-auto btn-box">
                         <Button
                             onClick={this.toggleIsSideChecked}
                             size="lg"
@@ -148,7 +147,7 @@ class PriceEstimator extends Component {
                         <Button
                             onClick={this.toggleIsEntreeChecked}
                             size="lg"
-                            className={isEntreeActive ? "btn-info" : "btn-light btn-outline-info"}>
+                            className={isEntreeActive ? "btn-info mx-2" : "btn-light btn-outline-info mx-2"}>
                             Entrees
                         </Button>
                         <Button
