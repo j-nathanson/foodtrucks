@@ -12,7 +12,7 @@ class TrucksPage extends Component {
     render() {
         const cardGallery = this.props.foodTrucks.map(foodTruck => {
             return (
-                <TruckInfoCard foodTruck={foodTruck} />
+                <TruckInfoCard key={foodTruck.id} foodTruck={foodTruck} />
             )
         })
         return (

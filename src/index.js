@@ -7,10 +7,7 @@ import 'font-awesome/css/font-awesome.css';
 import 'bootstrap-social/bootstrap-social.css';
 import './styles/main.scss';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ReactDOM.render(<App />,
   document.getElementById('root')
 );
 

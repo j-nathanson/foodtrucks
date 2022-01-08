@@ -8,15 +8,15 @@ export default class TruckInfoCard extends Component {
 
         let box = [];
         for (let i = numOfStars; i > 0; i--) {
-            box.push(this.addStar())
+            box.push(this.addStar(i))
         }
         return (
             <div>{box}  <i className="fa fa-yelp"></i></div>
         )
     }
 
-    addStar = () => <i className="fa fa-star" />
-   
+    addStar = (key) => <i key={key} className="fa fa-star" />
+
     render() {
 
         return (
@@ -32,7 +32,7 @@ export default class TruckInfoCard extends Component {
                                 {this.createStarBox(this.props.foodTruck.rating)}
                             </div>
                             <div className="col pl-0 d-flex justify-content-center">
-                                <Link href={this.props.foodTruck.menu}>Check out our menu</Link>
+                                <a href={this.props.foodTruck.menu}>Check out our menu</a>
                             </div>
                         </div>
                         <p>{this.props.foodTruck.description}</p>
