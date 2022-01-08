@@ -10,7 +10,7 @@ function CateringPage(props) {
             <CarouselComponent carouselItems={props.carouselItems} />
             <ImageTextBox textObject={props.textObjects[3]}/>
             <div className="row">
-                <PriceEstimator />
+                <PriceEstimator catering={props.catering}/>
             </div>
             <CateringModal/>
 

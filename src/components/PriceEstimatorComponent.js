@@ -1,22 +1,18 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Button, } from "reactstrap";
+
 
 class PriceEstimator extends Component {
     constructor(props) {
         super(props)
-
+        const startCost = props.catering.costPerGuest * props.catering.sliderGuestValue;
 
         this.state = {
-            costPerGuest: 14,
-            totalCost: 700,
-            sliderGuestValue: 50,
+            totalCost: startCost,
+            sliderGuestValue: props.catering.sliderGuestValue,
             isSideChecked: false,
             isEntreeChecked: false,
             isDessertChecked: false,
-            sideCost: 0,
-            entreeCost: 0,
-            dessertCost: 0
-
         }
     }
 
@@ -58,8 +54,9 @@ class PriceEstimator extends Component {
     // togglers check and update boolean values, and call the setters
     toggleIsSideChecked = () => {
         const sideBoolean = !this.state.isSideChecked;
+        const price = this.props.catering.sideCost;
 
-        sideBoolean ? this.setSideCost(150) : this.setSideCost(0);
+        sideBoolean ? this.setSideCost(price) : this.setSideCost(0);
 
         this.setState(
             { isSideChecked: sideBoolean }
@@ -67,8 +64,9 @@ class PriceEstimator extends Component {
     }
     toggleIsEntreeChecked = () => {
         const entreeBoolean = !this.state.isEntreeChecked;
+        const price = this.props.catering.entreeCost;
 
-        entreeBoolean ? this.setEntreeCost(200) : this.setEntreeCost(0);
+        entreeBoolean ? this.setEntreeCost(price) : this.setEntreeCost(0);
 
         this.setState(
             { isEntreeChecked: entreeBoolean }
@@ -76,8 +74,9 @@ class PriceEstimator extends Component {
     }
     toggleIsDessertChecked = () => {
         const dessertBoolean = !this.state.isDessertChecked;
+        const price = this.props.catering.dessertCost;
 
-        dessertBoolean ? this.setDessertCost(100) : this.setDessertCost(0);
+        dessertBoolean ? this.setDessertCost(price) : this.setDessertCost(0);
 
         this.setState(
             { isDessertChecked: dessertBoolean }
@@ -87,28 +86,31 @@ class PriceEstimator extends Component {
     // Use the state to compute labor cost plus any extra costs
     computeCost = (numGuest, sideCost = this.state.sideCost, entreeCost = this.state.entreeCost, dessertCost = this.state.dessertCost) => {
 
-        const costPerGuest = this.state.costPerGuest;
-        let laborCost = costPerGuest * numGuest;
+        const costPerGuest = this.props.catering.costPerGuest;
+        let cost = costPerGuest * numGuest;
 
         if (sideCost) {
-            laborCost += sideCost;
+            cost += sideCost;
         }
         if (entreeCost) {
-            laborCost += entreeCost;
+            cost += entreeCost;
         }
         if (dessertCost) {
-            laborCost += dessertCost;
+            cost += dessertCost;
         }
         this.setState(
-            { totalCost: laborCost }
+            { totalCost: cost }
         )
+
     }
 
 
     render() {
+
         const isSideActive = this.state.isSideChecked;
         const isEntreeActive = this.state.isEntreeChecked;
         const isDessertActive = this.state.isDessertChecked;
+
         return (
             <div className="container-fluid price-estimator p-5">
                 <div className="row justify-content-center text-center">
@@ -166,8 +168,6 @@ class PriceEstimator extends Component {
                 <div className="row justify-content-center">
                     <span className="total-cost"> ${this.state.totalCost}</span>
                 </div>
-
-
             </div>
         )
     }
