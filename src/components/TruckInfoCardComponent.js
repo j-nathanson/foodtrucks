@@ -1,7 +1,5 @@
 import React, { Component } from "react"
 import { Card, CardBody, CardHeader, CardImg } from "reactstrap";
-import { Link } from "react-router-dom";
-
 export default class TruckInfoCard extends Component {
 
     createStarBox = (numOfStars) => {
@@ -11,7 +9,7 @@ export default class TruckInfoCard extends Component {
             box.push(this.addStar(i))
         }
         return (
-            <div>{box}  <i className="fa fa-yelp"></i></div>
+            <div>{box} <i className="fa fa-yelp"></i></div>
         )
     }
 

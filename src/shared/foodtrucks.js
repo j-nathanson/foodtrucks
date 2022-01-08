@@ -2,6 +2,7 @@ const FOODTRUCKS = [
     {
         id: 1,
         name: "Big D's Grub",
+        cuisine: "burgers",
         description: "Aut magni sint nam nemo quaerat et perferendis consectetur sed asperiores sequi aut dignissimos",
         imgMain: "/assets/images/big-d-1.jpeg",
         imgCard: "/assets/images/big-d-2.jpeg",
@@ -11,6 +12,7 @@ const FOODTRUCKS = [
     {
         id: 2,
         name: "Tacos El Poblanito",
+        cuisine: "mexican",
         description: "Hic cumque nobis et eligendi libero non nisi quia qui quaerat 33 itaque iusto ex esse nihil ad",
         imgMain: "/assets/images/poblanito-1.jpeg",
         imgCard: "/assets/images/poblanito-2.png",
@@ -20,6 +22,7 @@ const FOODTRUCKS = [
     {
         id: 3,
         name: "Stuf'd Truck",
+        cuisine: "burgers",
         description: "Est placeat accusamus nam deserunt debitis ut temporibus nihil. Qui nihil delectus",
         imgMain: "/assets/images/stuftd-1.jpeg",
         imgCard: "/assets/images/stuftd-2.jpeg",
@@ -29,6 +32,7 @@ const FOODTRUCKS = [
     {
         id: 4,
         name: "Tacos El Bronco",
+        cuisine: "mexican",
         description: "Vel vero deserunt cum mollitia ipsam vel repudiandae odio ut praesentium libero!",
         imgMain: "/assets/images/el-bronco-1.jpg",
         imgCard: "/assets/images/el-bronco-2.jpeg",
@@ -38,6 +42,7 @@ const FOODTRUCKS = [
     {
         id: 5,
         name: "Poke Motion",
+        cuisine: "sushi",
         description: "Non nesciunt voluptatem in corporis cupiditate sed aliquam adipisci et aliquid",
         imgMain: "/assets/images/poke-motion-1.jpeg",
         imgCard: "/assets/images/poke-motion-2.jpeg",
