@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import {
-    Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron,
-    Button, Modal, ModalHeader, ModalBody,
-    Form, FormGroup, Input, Label
-} from "reactstrap";
-import { NavLink, Link } from 'react-router-dom';
+import { Collapse, Container, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem } from "reactstrap";
+import { NavLink } from 'react-router-dom';
 
 class Navigation extends Component {
     constructor(props) {
@@ -22,7 +18,7 @@ class Navigation extends Component {
     render() {
         return (
             <Navbar dark sticky="top" expand="md">
-                <div className="container">
+                <Container>
                     <NavbarBrand className="mr-auto" href="/">
                         <img src="assets/images/logo.svg" alt="Logo" className="mr-2" width={40} height={40} />
                         Foodies Trucks NYC
@@ -42,7 +38,7 @@ class Navigation extends Component {
                             </NavItem>
                         </Nav>
                     </Collapse>
-                </div>
+                </Container>
             </Navbar >
         );
     }
