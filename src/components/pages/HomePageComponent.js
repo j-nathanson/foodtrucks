@@ -3,15 +3,14 @@ import JumbotronComponent from "../JumbotronComponent";
 import ImageTextBox from "../ImageTextBoxComponent";
 import ImageGallery from "../ImageGalleryComponent";
 
-
 function HomePage(props) {
-    
+
     return (
-        <div className="">
-           <JumbotronComponent/>
-            <ImageTextBox textObject={props.textObjects[0]}/>
-            <ImageGallery foodTrucks={props.foodTrucks}/>
-            <ImageTextBox textObject={props.textObjects[1]}/>
+        <div>
+            <JumbotronComponent />
+            <ImageTextBox textObject={props.textObjects[0]} />
+            <ImageGallery foodTrucks={props.foodTrucks} />
+            <ImageTextBox textObject={props.textObjects[1]} />
         </div>
     )
 }
