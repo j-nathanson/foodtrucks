@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Collapse, Container, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem } from "reactstrap";
 import { NavLink } from 'react-router-dom';
+import logo from "../assets/images/logo.svg"
 
 class Navigation extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class Navigation extends Component {
             <Navbar dark sticky="top" expand="md">
                 <Container>
                     <NavbarBrand className="mr-auto" href="/">
-                        <img src="assets/images/logo.svg" alt="Logo" className="mr-2" width={40} height={40} />
+                        <img src={logo} alt="Logo" className="mr-2" width={40} height={40} />
                         Foodies Trucks NYC
                     </NavbarBrand>
 
