@@ -1,5 +1,6 @@
 @import "colors";
 
+
 .startGuest {
     text-align: right;
 }
@@ -14,10 +15,15 @@
     padding: 0;
 }
 
+
+.btn-outline-info:focus {
+    background-color: $focusColor;
+    color: $primary;
+}
+
 .btn-box {
     display: flex;
     justify-content: space-around;
-
 }
 
 .price-estimator-heading {
@@ -36,6 +42,6 @@
     font-size: 2.5rem;
 }
 
-#slide{
+#slide {
     width: 100%;
 }
