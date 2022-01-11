@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Label, Modal, ModalHeader, ModalBody } from "reactstrap";
+import { Button, Col, Container, Label, Modal, ModalHeader, ModalBody, Row } from "reactstrap";
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
 
@@ -29,10 +29,12 @@ class CateringModal extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row justify-content-center toggle-modal-btn">
-                    <Button onClick={this.toggleModal} color="info" className="btn-lg mb-3">Start Here</Button>
-                </div>
+            <Container>
+                <Row className="justify-content-center toggle-modal-btn">
+                    <Button onClick={this.toggleModal} color="info" size="lg" className="mb-3">
+                        Start Here
+                    </Button>
+                </Row>
 
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>
@@ -40,7 +42,6 @@ class CateringModal extends Component {
                     </ModalHeader>
                     <ModalBody>
                         <LocalForm onSubmit={values => this.handleSubmit(values)} className="container">
-
                             <div className="form-group">
                                 <Label htmlFor="name">Your Name</Label>
                                 <Control.text model=".name" id="name" name="name" className='form-control' placeholder="John Truckman" />
@@ -57,27 +58,26 @@ class CateringModal extends Component {
                                 <div className="row justify-content-center">
                                     <Label>How many guest are you expecting?</Label>
                                 </div>
-                                <div className="row">
-                                    <div className="col">
-                                        <div className="row justify-content-center">
+                                <Row>
+                                    <Col>
+                                        <Row className="justify-content-center">
                                             <Label htmlFor="lessThan100">50-200</Label>
-                                        </div>
+                                        </Row>
                                         <Control.radio model=".guests" id="lessThan100" name="guests" value="small" className='form-control' />
-                                    </div>
-
-                                    <div className="col">
-                                        <div className="row justify-content-center">
+                                    </Col>
+                                    <Col>
+                                        <Row className="justify-content-center">
                                             <Label htmlFor="medium">200-350</Label>
-                                        </div>
+                                        </Row>
                                         <Control.radio model=".guests" id="medium" name="guests" value="medium" className='form-control' />
-                                    </div>
-                                    <div className="col">
-                                        <div className="row justify-content-center">
+                                    </Col>
+                                    <Col>
+                                        <Row className="justify-content-center">
                                             <Label htmlFor="large">350+</Label>
-                                        </div>
+                                        </Row>
                                         <Control.radio model=".guests" id="large" name="guests" value="large" className='form-control' />
-                                    </div>
-                                </div>
+                                    </Col>
+                                </Row>
                             </div>
                             <div className="form-group">
                                 <Label htmlFor="foodTrucks">Select your favorite truck</Label>
@@ -95,17 +95,13 @@ class CateringModal extends Component {
                                 <Label htmlFor="text">Any additional info?</Label>
                                 <Control.textarea model=".text" id="text" name="text" className="form-control" rows={6} />
                             </div>
-                            <Button type="submit" value="submit" color="info"> submit</Button>
+                            <Button type="submit" value="submit" color="info">Submit</Button>
                         </LocalForm>
-
                     </ModalBody>
-
                 </Modal>
-            </div>
+            </Container>
         )
     }
 }
-
-
 
 export default CateringModal;
