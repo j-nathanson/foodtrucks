@@ -6,8 +6,8 @@ import CateringPage from './pages/CateringPageComponent';
 import TrucksPage from './pages/TrucksPageComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
-import FOODTRUCKS from '../shared/foodtrucks';
-import TEXTOBJECTS from '../shared/textobjects';
+import FOOD_TRUCKS from '../shared/foodTrucks';
+import TEXT_OBJECTS from '../shared/textObjects';
 import CAROUSEL_ITEMS from '../shared/carousel';
 import CATERING from "../shared/catering";
 class Main extends Component {
@@ -15,8 +15,8 @@ class Main extends Component {
         super(props);
 
         this.state = {
-            foodTrucks: FOODTRUCKS,
-            textObjects: TEXTOBJECTS,
+            foodTrucks: FOOD_TRUCKS,
+            textObjects: TEXT_OBJECTS,
             carouselItems: CAROUSEL_ITEMS,
             catering: CATERING
         }

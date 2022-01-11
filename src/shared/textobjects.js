@@ -1,4 +1,4 @@
-const TEXTOBJECTS = [
+const TEXT_OBJECTS = [
     {
         id: 0,
         heading: "Who We Are",
@@ -50,4 +50,4 @@ const TEXTOBJECTS = [
 
 ]
 
-export default TEXTOBJECTS;
+export default TEXT_OBJECTS;

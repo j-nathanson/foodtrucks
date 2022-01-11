@@ -1,4 +1,4 @@
-const FOODTRUCKS = [
+const FOOD_TRUCKS = [
     {
         id: 1,
         name: "Big D's Grub",
@@ -60,4 +60,4 @@ const FOODTRUCKS = [
     },
 ]
 
-export default FOODTRUCKS;
+export default FOOD_TRUCKS;
