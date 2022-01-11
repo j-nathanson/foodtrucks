@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, CardImg, CardImgOverlay, CardTitle, Col, Container, Row } from "reactstrap";
+import { Card, CardImg, CardImgOverlay, CardTitle, Container, Row } from "reactstrap";
 
 
 const renderCard = (foodTruck) => {
@@ -30,7 +30,6 @@ function ImageGallery(props) {
                 {directory}
             </Row>
         </Container>
-
     )
 }
 
