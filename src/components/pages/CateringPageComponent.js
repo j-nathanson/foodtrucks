@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "reactstrap";
 import CarouselComponent from "../CarouselComponent";
 import PriceEstimator from "../PriceEstimatorComponent";
 import CateringModal from "../CateringModalComponent";
@@ -6,15 +7,12 @@ import ImageTextBox from "../ImageTextBoxComponent";
 
 function CateringPage(props) {
     return (
-        <div classNameName="container-fluid">
+        <Container fluid>
             <CarouselComponent carouselItems={props.carouselItems} />
-            <ImageTextBox textObject={props.textObjects[3]}/>
-            <div className="row">
-                <PriceEstimator catering={props.catering}/>
-            </div>
-            <CateringModal/>
-
-        </div>
+            <ImageTextBox textObject={props.textObjects[3]} />
+            <PriceEstimator catering={props.catering} />
+            <CateringModal />
+        </Container>
     )
 }
 
