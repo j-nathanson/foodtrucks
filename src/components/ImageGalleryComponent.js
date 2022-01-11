@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
+import { Card, CardImg, CardImgOverlay, CardTitle, Col, Container, Row } from "reactstrap";
 
 
 const renderCard = (foodTruck) => {
-  
+
     return (
-        <Link className=" col-sm-6 col-md-4 p-1" to="/ourtrucks">
+        <Link className="col-sm-6 col-md-4 p-1" to="/ourtrucks">
             <Card key={foodTruck.id}>
                 <CardImg top src={foodTruck.imgMain} />
                 <CardImgOverlay>
@@ -14,28 +14,24 @@ const renderCard = (foodTruck) => {
                 </CardImgOverlay>
             </Card>
         </Link>
-
     )
 }
-
-
 
 function ImageGallery(props) {
 
     const directory = props.foodTrucks.map(foodTruck => renderCard(foodTruck))
 
     return (
-        <div className="container-fluid bg-info image-gallery">
-            <div className="row text-center justify-content-center">
+        <Container fluid className="bg-info image-gallery">
+            <Row className="text-center justify-content-center">
                 <h2>Our Trucks</h2>
-            </div>
-            <div className="row">
+            </Row>
+            <Row>
                 {directory}
-            </div>
-        </div>
+            </Row>
+        </Container>
 
     )
 }
-
 
 export default ImageGallery;
