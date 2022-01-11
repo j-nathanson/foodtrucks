@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, } from "reactstrap";
+import { Button, Container, Col, Row } from "reactstrap";
 
 
 class PriceEstimator extends Component {
@@ -112,34 +112,34 @@ class PriceEstimator extends Component {
         const isDessertActive = this.state.isDessertChecked;
 
         return (
-            <div className="container-fluid price-estimator p-5">
-                <div className="row justify-content-center text-center">
+            <Container fluid className="price-estimator p-5">
+                <Row className="justify-content-center text-center">
                     <h1 className="price-estimator-heading">price estimator</h1>
-                </div>
-                <div className="row justify-content-center">
+                </Row>
+                <Row className="justify-content-center">
                     <h3>number of guests: <span className="price-estimator-guests">{this.state.sliderGuestValue}</span></h3>
-                </div>
-                <div className="row my-5">
-                    <div className="col-2 startGuest">
+                </Row>
+                <Row className="my-5">
+                    <Col xs="2" className="startGuest">
                         <span>50</span>
-                    </div>
-                    <div className="col-8">
+                    </Col>
+                    <Col xs="8">
                         <input type="range"
                             min="50" max="500" id="slide" step="10"
                             value={this.state.sliderGuestValue}
                             onChange={this.handleSliderChange} />
-                    </div>
-                    <div className="col-2 endGuest">
+                    </Col>
+                    <Col xs="2" className="endGuest">
                         <span>500</span>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
 
-                <div className="row justify-content-center">
+                <Row className="justify-content-center">
                     <h3>what will you serve?</h3>
-                </div>
+                </Row>
 
-                <div className="row mb-5">
-                    <div className="col-12 col-sm-8 col-md-6 mx-auto btn-box">
+                <Row className="mb-5">
+                    <Col xs="12" sm="8" md="6" className="mx-auto btn-box">
                         <Button
                             onClick={this.toggleIsSideChecked}
                             size="lg"
@@ -158,17 +158,16 @@ class PriceEstimator extends Component {
                             className={isDessertActive ? "btn-info" : "btn-light btn-outline-info"}>
                             Dessert
                         </Button>
+                    </Col>
+                </Row>
 
-                    </div>
-                </div>
-
-                <div className="row justify-content-center">
+                <Row className="justify-content-center">
                     <h2>approximate cost</h2>
-                </div>
-                <div className="row justify-content-center">
+                </Row>
+                <Row className="justify-content-center">
                     <span className="total-cost"> ${this.state.totalCost}</span>
-                </div>
-            </div>
+                </Row>
+            </Container>
         )
     }
 }
