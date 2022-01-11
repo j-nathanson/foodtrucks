@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Card, CardBody, CardHeader, CardImg } from "reactstrap";
+import { Card, CardBody, CardHeader, CardImg, Col } from "reactstrap";
 export default class TruckInfoCard extends Component {
 
     createStarBox = (numOfStars) => {
@@ -18,7 +18,8 @@ export default class TruckInfoCard extends Component {
     render() {
 
         return (
-            <div className="col-12 col-md-6 col-lg-4">
+
+            <Col sm="12" md="6" lg="4">
                 <Card className="truck-info-card m-2">
                     <CardImg src={this.props.foodTruck.imgCard} alt={this.props.foodTruck.className} />
                     <CardHeader>
@@ -36,7 +37,7 @@ export default class TruckInfoCard extends Component {
                         <p>{this.props.foodTruck.description}</p>
                     </CardBody>
                 </Card>
-            </div>
+            </Col>
         )
     }
 }
