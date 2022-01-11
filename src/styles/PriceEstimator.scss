@@ -17,8 +17,8 @@
 
 
 .btn-outline-info:focus {
-    background-color: $focusColor;
-    color: $primary;
+    background-color: $focusColor !important;
+    color: $primary !important;
 }
 
 .btn-box {
