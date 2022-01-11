@@ -1,8 +1,7 @@
 import React, { Component } from "react";
+import { Col, Container, Row } from "reactstrap";
 import ImageTextBox from "../ImageTextBoxComponent";
 import TruckInfoCard from "../TruckInfoCardComponent";
-import { Control, LocalForm } from "react-redux-form"
-
 
 function FilterCardGallery(props) {
     if (props.choice === "everything") {
@@ -30,11 +29,6 @@ class TrucksPage extends Component {
         }
     }
 
-    addStar = () => {
-        return (
-            <i className="fa fa-star"></i>
-        )
-    }
     handleChange = (event) => {
         const choice = event.target.value;
         this.setState({ choice: choice });
@@ -42,12 +36,11 @@ class TrucksPage extends Component {
     }
 
     render() {
-
         return (
-            <div className="container-fluid" >
+            <Container fluid >
                 <h1 className="truck-page-header">Our Trucks</h1>
-                <div className="row justify-content-center">
-                    <div className="col-10 d-flex justify-content-center align-items-center">
+                <Row className="justify-content-center">
+                    <Col xs="10" className="d-flex justify-content-center align-items-center">
                         <label htmlFor="filter" className="mr-2">Choose a cuisine </label>
                         <select onChange={this.handleChange} id="filter">
                             <option value="everything">Everything</option>
@@ -55,20 +48,15 @@ class TrucksPage extends Component {
                             <option value="mexican">Mexican</option>
                             <option value="sushi">Sushi</option>
                         </select>
-                    </div>
-
-
-                </div>
-                <div className="row p-2">
+                    </Col>
+                </Row>
+                <Row className="p-2">
                     <FilterCardGallery choice={this.state.choice} foodTrucks={this.props.foodTrucks} />
-                </div>
-
+                </Row>
                 <ImageTextBox textObject={this.props.textObjects[2]}></ImageTextBox>
-            </div>
+            </Container>
         )
     }
-
 }
-
 
 export default TrucksPage;
