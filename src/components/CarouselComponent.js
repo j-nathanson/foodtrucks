@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Carousel,
-    CarouselItem,
-    CarouselControl,
-    CarouselIndicators,
-    CarouselCaption
-} from 'reactstrap';
-
-
-
+import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 class CarouselComponent extends Component {
     constructor(props) {
         super(props)
@@ -73,6 +64,5 @@ class CarouselComponent extends Component {
         );
     }
 }
-
 
 export default CarouselComponent
