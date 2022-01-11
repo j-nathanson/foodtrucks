@@ -22,7 +22,6 @@ function ImageTextBox(props) {
                             </Button>
                         </Link>
                     </Row>
-
                 </Col>
             </Row>
         </Container>
