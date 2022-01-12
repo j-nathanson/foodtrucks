@@ -1,5 +1,6 @@
 {
   "name": "foodtruck-app",
+  "homepage": "https://nyc-ft.surge.sh/home",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
