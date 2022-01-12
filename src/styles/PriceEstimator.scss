@@ -16,13 +16,14 @@
 }
 
 
-.btn-outline-info:focus {
+.btn-outline-info:hover {
     background-color: $focusColor !important;
     color: $primary !important;
 }
-.btn-info:focus {
-    background-color: $primary !important;
-    color: $white !important;
+
+.btn-info:active {
+    background-color: $white !important;
+    color: $primary !important;
 }
 
 .btn-box {
