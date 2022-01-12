@@ -140,6 +140,7 @@ class PriceEstimator extends Component {
 
                 <Row className="mb-5">
                     <Col xs="12" sm="8" md="6" className="mx-auto btn-box">
+                   
                         <Button
                             onClick={this.toggleIsSideChecked}
                             size="lg"
