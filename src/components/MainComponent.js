@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Navigation from './NavigationComponent';
 import Footer from './FooterComponent';
 import HomePage from './pages/HomePageComponent';
@@ -10,33 +10,29 @@ import FOOD_TRUCKS from '../shared/foodTrucks';
 import TEXT_OBJECTS from '../shared/textObjects';
 import CAROUSEL_ITEMS from '../shared/carousel';
 import CATERING from "../shared/catering";
-class Main extends Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            foodTrucks: FOOD_TRUCKS,
-            textObjects: TEXT_OBJECTS,
-            carouselItems: CAROUSEL_ITEMS,
-            catering: CATERING
-        }
-    }
+function Main() {
 
-    render() {
-        return (
-            <div>
-                <Navigation />
-                <ScrollToTop />
-                <Switch>
-                    <Route path='/home' render={() => <HomePage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
-                    <Route path='/catering' render={() => <CateringPage carouselItems={this.state.carouselItems} textObjects={this.state.textObjects} catering={this.state.catering}/>} />
-                    <Route path='/ourtrucks' render={() => <TrucksPage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
-                    <Redirect to='/home' />
-                </Switch>
-                <Footer />
-            </div>
-        )
-    }
+    const [foodTrucks, addFoodTrucks] = useState(FOOD_TRUCKS);
+    const [textObjects, addTextObjects] = useState(TEXT_OBJECTS);
+    const [carouselItems, addCarouselItems] = useState(CAROUSEL_ITEMS);
+    const [catering, addCatering] = useState(CATERING);
+
+
+    return (
+        <div>
+            <Navigation />
+            <ScrollToTop />
+            <Switch>
+                <Route path='/home' render={() => <HomePage foodTrucks={foodTrucks} textObjects={textObjects} />} />
+                <Route path='/catering' render={() => <CateringPage carouselItems={carouselItems} textObjects={textObjects} catering={catering} />} />
+                <Route path='/ourtrucks' render={() => <TrucksPage foodTrucks={foodTrucks} textObjects={textObjects} />} />
+                <Redirect to='/home' />
+            </Switch>
+            <Footer />
+        </div>
+    )
+
 }
 
 export default Main;
