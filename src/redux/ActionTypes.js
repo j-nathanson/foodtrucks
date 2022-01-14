@@ -1,0 +1,4 @@
+export const ADD_FOOD_TRUCKS = 'ADD_FOOD_TRUCKS';
+export const ADD_CAROUSEL = 'ADD_CAROUSEL';
+export const ADD_CATERING = 'ADD_CATERING';
+export const ADD_TEXT_OBJECTS = 'ADD_TEXT_OBJECTS';

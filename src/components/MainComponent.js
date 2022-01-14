@@ -29,7 +29,7 @@ class Main extends Component {
                 <ScrollToTop />
                 <Switch>
                     <Route path='/home' render={() => <HomePage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
-                    <Route path='/catering' render={() => <CateringPage carouselItems={this.state.carouselItems} textObjects={this.state.textObjects} catering={this.state.catering}/>} />
+                    <Route path='/catering' render={() => <CateringPage carouselItems={this.state.carouselItems} textObjects={this.state.textObjects} catering={this.state.catering} />} />
                     <Route path='/ourtrucks' render={() => <TrucksPage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
                     <Redirect to='/home' />
                 </Switch>
