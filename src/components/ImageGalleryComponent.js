@@ -6,8 +6,8 @@ import { Card, CardImg, CardImgOverlay, CardTitle, Container, Row } from "reacts
 const renderCard = (foodTruck) => {
 
     return (
-        <Link className="col-sm-6 col-md-4 p-1" to="/ourtrucks">
-            <Card key={foodTruck.id}>
+        <Link className="col-sm-6 col-md-4 p-1" to="/ourtrucks" key={foodTruck.id}>
+            <Card >
                 <CardImg top src={foodTruck.imgMain} />
                 <CardImgOverlay>
                     <CardTitle>{foodTruck.name}</CardTitle>

@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import Navigation from './NavigationComponent';
 import Footer from './FooterComponent';
 import HomePage from './pages/HomePageComponent';
@@ -26,7 +26,6 @@ function Main() {
             <Switch>
                 <Route path='/home' render={() => <HomePage foodTrucks={foodTrucks} textObjects={textObjects} />} />
                 <Route path='/catering' render={() => <CateringPage carouselItems={carouselItems} textObjects={textObjects} catering={catering} />} />
-                <Route path='/ourtrucks' render={() => <TrucksPage foodTrucks={foodTrucks} textObjects={textObjects} />} />
                 <Redirect to='/home' />
             </Switch>
             <Footer />
@@ -36,3 +35,6 @@ function Main() {
 }
 
 export default Main;
+
+
+                // <Route path='/ourtrucks' render={() => <TrucksPage foodTrucks={foodTrucks} textObjects={textObjects} />} />

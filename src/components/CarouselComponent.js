@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 class CarouselComponent extends Component {
+
     constructor(props) {
         super(props)
+        console.log(props.carouselItems[0].caption);
         this.state = {
             activeIndex: 0
         };
@@ -33,7 +35,6 @@ class CarouselComponent extends Component {
     }
     render() {
         const { activeIndex } = this.state;
-
         const slides = this.props.carouselItems.map((item) => {
             return (
                 <CarouselItem
@@ -44,6 +45,7 @@ class CarouselComponent extends Component {
                     <img src={item.src} alt={item.altText} />
                     <CarouselCaption captionHeader={item.caption} />
                 </CarouselItem>
+
             );
         });
 
@@ -66,3 +68,4 @@ class CarouselComponent extends Component {
 }
 
 export default CarouselComponent
+

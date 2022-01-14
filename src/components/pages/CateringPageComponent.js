@@ -6,6 +6,7 @@ import CateringModal from "../CateringModalComponent";
 import ImageTextBox from "../ImageTextBoxComponent";
 
 function CateringPage(props) {
+    console.log(props.carouselItems);
     return (
         <Container fluid className="p-0">
             <CarouselComponent carouselItems={props.carouselItems} />
@@ -17,3 +18,5 @@ function CateringPage(props) {
 }
 
 export default CateringPage;
+
+// <CateringModal />
