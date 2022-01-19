@@ -8,7 +8,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
 import FOOD_TRUCKS from '../shared/foodTrucks';
 import TEXT_OBJECTS from '../shared/textObjects';
-import CAROUSEL_ITEMS from '../shared/carousel';
 
 // state data passed through Main
 class Main extends Component {
@@ -18,8 +17,6 @@ class Main extends Component {
         this.state = {
             foodTrucks: FOOD_TRUCKS,
             textObjects: TEXT_OBJECTS,
-            carouselItems: CAROUSEL_ITEMS,
-
         }
     }
 
@@ -30,7 +27,7 @@ class Main extends Component {
                 <ScrollToTop />
                 <Switch>
                     <Route path='/home' render={() => <HomePage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
-                    <Route path='/catering' render={() => <CateringPage carouselItems={this.state.carouselItems} textObjects={this.state.textObjects} />} />
+                    <Route path='/catering' render={() => <CateringPage textObjects={this.state.textObjects} />} />
                     <Route path='/ourtrucks' render={() => <TrucksPage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
                     <Redirect to='/home' />
                 </Switch>

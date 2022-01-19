@@ -8,7 +8,7 @@ import ImageTextBox from "../ImageTextBoxComponent";
 function CateringPage(props) {
     return (
         <Container fluid className="p-0">
-            <CarouselComponent carouselItems={props.carouselItems} />
+            <CarouselComponent />
             <ImageTextBox textObject={props.textObjects[3]} />
             <PriceEstimator />
             <CateringModal />
