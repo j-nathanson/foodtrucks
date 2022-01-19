@@ -27,7 +27,7 @@ class Main extends Component {
                 <ScrollToTop />
                 <Switch>
                     <Route path='/home' render={() => <HomePage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
-                    <Route path='/catering' render={() => <CateringPage textObjects={this.state.textObjects} />} />
+                    <Route path='/catering' component={CateringPage} />
                     <Route path='/ourtrucks' render={() => <TrucksPage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
                     <Redirect to='/home' />
                 </Switch>
