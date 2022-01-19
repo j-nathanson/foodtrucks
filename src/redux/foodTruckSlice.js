@@ -3,7 +3,6 @@ import FOOD_TRUCKS from '../shared/foodTrucks';
 
 const initialState = {
     foodTrucks: FOOD_TRUCKS,
-    choice: "everything"
 }
 
 export const foodTruckSlice = createSlice({
