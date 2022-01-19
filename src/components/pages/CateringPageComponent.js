@@ -4,7 +4,7 @@ import CarouselComponent from "../CarouselComponent";
 import PriceEstimator from "../PriceEstimatorComponent";
 import CateringModal from "../CateringModalComponent";
 import ImageTextBox from "../ImageTextBoxComponent";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
 function CateringPage() {
     const textObject = useSelector(state => state.textObjectReducer.textObjects[3]);
