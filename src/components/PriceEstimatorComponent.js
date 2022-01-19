@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { Button, Container, Col, Row } from "reactstrap";
 
+function PriceEstimator(props) {
+    return (
+        <h1>Price estimator</h1>
+    )
+}
 
-class PriceEstimator extends Component {
+class PriceEstimatorOld extends Component {
     constructor(props) {
         super(props)
         const startCost = props.catering.costPerGuest * props.catering.sliderGuestValue;
@@ -140,7 +145,7 @@ class PriceEstimator extends Component {
 
                 <Row className="mb-5">
                     <Col xs="12" sm="8" md="6" className="mx-auto btn-box">
-                   
+
                         <Button
                             onClick={this.toggleIsSideChecked}
                             size="lg"
