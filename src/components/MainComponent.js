@@ -10,6 +10,7 @@ import FOOD_TRUCKS from '../shared/foodTrucks';
 import TEXT_OBJECTS from '../shared/textObjects';
 import CAROUSEL_ITEMS from '../shared/carousel';
 import CATERING from "../shared/catering";
+// state data passed through Main
 class Main extends Component {
     constructor(props) {
         super(props);
