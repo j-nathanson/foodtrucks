@@ -9,7 +9,7 @@ import ScrollToTop from './ScrollToTop';
 import FOOD_TRUCKS from '../shared/foodTrucks';
 import TEXT_OBJECTS from '../shared/textObjects';
 import CAROUSEL_ITEMS from '../shared/carousel';
-import CATERING from "../shared/catering";
+
 // state data passed through Main
 class Main extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class Main extends Component {
             foodTrucks: FOOD_TRUCKS,
             textObjects: TEXT_OBJECTS,
             carouselItems: CAROUSEL_ITEMS,
-            catering: CATERING
+
         }
     }
 
@@ -30,7 +30,7 @@ class Main extends Component {
                 <ScrollToTop />
                 <Switch>
                     <Route path='/home' render={() => <HomePage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
-                    <Route path='/catering' render={() => <CateringPage carouselItems={this.state.carouselItems} textObjects={this.state.textObjects} catering={this.state.catering}/>} />
+                    <Route path='/catering' render={() => <CateringPage carouselItems={this.state.carouselItems} textObjects={this.state.textObjects} />} />
                     <Route path='/ourtrucks' render={() => <TrucksPage foodTrucks={this.state.foodTrucks} textObjects={this.state.textObjects} />} />
                     <Redirect to='/home' />
                 </Switch>

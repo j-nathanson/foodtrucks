@@ -1,15 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+import CATERING from '../shared/catering';
 
 const initialState = {
-    guestNum: 50,
+    guestNum: CATERING.sliderGuestValue,
     isSideChecked: false,
     isEntreeChecked: false,
     isDessertChecked: false,
     costs: {
-        costPerGuest: 14,
-        sideCost: 100,
-        entreeCost: 200,
-        dessertCost: 300
+        costPerGuest: CATERING.costPerGuest,
+        sideCost: CATERING.sideCost,
+        entreeCost: CATERING.entreeCost,
+        dessertCost: CATERING.dessertCost
     }
 }
 
