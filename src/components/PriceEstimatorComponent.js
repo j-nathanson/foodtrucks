@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Button, Container, Col, Row } from "reactstrap";
 import { useSelector, useDispatch, } from 'react-redux'
 import { changeGuestNum, toggleSides, toggleEntrees, toggleDessert } from '../redux/estimatorSlice'
@@ -32,8 +32,6 @@ function PriceEstimator(props) {
         }
         return cost
     }
-
-
 
     return (
         <Container fluid className="price-estimator p-5">
@@ -82,28 +80,15 @@ function PriceEstimator(props) {
                         Dessert
                     </Button>
                 </Col>
-
             </Row>
-
+            <Row className="justify-content-center">
+                <h2>approximate cost</h2>
+            </Row>
+            <Row className="justify-content-center">
+                <span className="total-cost"> ${total()}</span>
+            </Row>
         </Container >
     )
 }
-
-//                 <Row className="mb-5">
-//                     <Col xs="12" sm="8" md="6" className="mx-auto btn-box">
-
-//                     </Col>
-//                 </Row>
-
-//                 <Row className="justify-content-center">
-//                     <h2>approximate cost</h2>
-//                 </Row>
-//                 <Row className="justify-content-center">
-//                     <span className="total-cost"> ${this.state.totalCost}</span>
-//                 </Row>
-//             </Container>
-//         )
-//     }
-// }
 
 export default PriceEstimator;
