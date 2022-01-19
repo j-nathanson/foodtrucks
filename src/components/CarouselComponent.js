@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
+
+function CarouselComponent2(){
+    
+}
 class CarouselComponent extends Component {
     constructor(props) {
         super(props)
