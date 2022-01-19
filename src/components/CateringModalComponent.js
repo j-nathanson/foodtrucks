@@ -1,11 +1,35 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Button, Col, Container, Label, Modal, ModalHeader, ModalBody, Row } from "reactstrap";
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
 const required = val => val && val.length;
 const maxLength = len => val => !val || (val.length <= len);
 const minLength = len => val => val && (val.length >= len);
-class CateringModal extends Component {
+// TODO handle form errors
+
+function CateringModal() {
+    const [isModalOpen, setModal] = useState(false);
+
+    const toggleModal = () => {
+        setModal(!isModalOpen);
+    }
+    return (
+        <Container>
+            <Row className="justify-content-center toggle-modal-btn">
+                <Button onClick={() => toggleModal()} color="info" size="lg" className="mb-3">
+                    Start Here
+                </Button>
+            </Row>
+            <Modal isOpen={isModalOpen} toggle={() => toggleModal()}>
+                <ModalHeader toggle={() => toggleModal()}>
+                    Book a truck
+                </ModalHeader>
+            </Modal>
+
+        </Container>
+    )
+}
+class CateringModal2 extends Component {
     constructor(props) {
         super(props);
 

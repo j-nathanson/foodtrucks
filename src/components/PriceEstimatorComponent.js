@@ -3,7 +3,7 @@ import { Button, Container, Col, Row } from "reactstrap";
 import { useSelector, useDispatch, } from 'react-redux'
 import { changeGuestNum, toggleSides, toggleEntrees, toggleDessert } from '../redux/estimatorSlice'
 
-function PriceEstimator(props) {
+function PriceEstimator() {
     // SELECT VARIABLES FROM THE STORE
     const guestNum = useSelector(state => state.estimatorReducer.guestNum);
     const costPerGuest = useSelector(state => state.estimatorReducer.costs.costPerGuest);
