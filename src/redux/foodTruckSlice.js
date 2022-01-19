@@ -14,6 +14,7 @@ export const foodTruckSlice = createSlice({
             if (action.payload === "everything") {
                 state.foodTrucks = initialState.foodTrucks
             } else {
+                state.foodTrucks = initialState.foodTrucks
                 state.foodTrucks = state.foodTrucks.filter(foodTruck => foodTruck.cuisine === action.payload)
             }
         }
