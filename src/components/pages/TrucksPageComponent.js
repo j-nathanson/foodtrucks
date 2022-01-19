@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import ImageTextBox from "../ImageTextBoxComponent";
 import TruckInfoCard from "../TruckInfoCardComponent";
