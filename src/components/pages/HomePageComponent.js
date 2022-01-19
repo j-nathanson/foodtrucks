@@ -12,7 +12,7 @@ function HomePage(props) {
         <div>
             <JumbotronComponent />
             <ImageTextBox textObject={textObjectTop} />
-            <ImageGallery foodTrucks={props.foodTrucks} />
+            <ImageGallery  />
             <ImageTextBox textObject={textObjectBottom} />
         </div>
     )

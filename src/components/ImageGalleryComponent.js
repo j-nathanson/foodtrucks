@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, CardImg, CardImgOverlay, CardTitle, Container, Row } from "reactstrap";
+import { useSelector } from "react-redux";
 
 
 const renderCard = (foodTruck) => {
@@ -17,9 +18,10 @@ const renderCard = (foodTruck) => {
     )
 }
 
-function ImageGallery(props) {
+function ImageGallery() {
 
-    const directory = props.foodTrucks.map(foodTruck => renderCard(foodTruck))
+    const foodTrucks = useSelector(state => state.foodTruckReducer.foodTrucks)
+    const directory = foodTrucks.map(foodTruck => renderCard(foodTruck))
 
     return (
         <Container fluid className="bg-info image-gallery">
