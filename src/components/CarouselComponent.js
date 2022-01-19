@@ -1,72 +1,59 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setActiveIndex } from '../redux/carouselSlice'
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 
-function CarouselComponent2(){
-    
-}
-class CarouselComponent extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            activeIndex: 0
-        };
-    }
-    onExiting = () => {
-        this.animating = true;
-    }
+function CarouselComponent() {
+    const activeIndex = useSelector(state => state.carouselReducer.activeIndex);
+    const carouselItems = useSelector(state => state.carouselReducer.carouselItems)
+    const carouselLength = carouselItems.length;
 
-    onExited = () => {
-        this.animating = false;
-    }
+    const dispatch = useDispatch();
 
-    next = () => {
-        if (this.animating) return;
-        const nextIndex = this.state.activeIndex === this.props.carouselItems.length - 1 ? 0 : this.state.activeIndex + 1;
-        this.setState({ activeIndex: nextIndex });
+    const next = () => {
+        activeIndex === carouselLength - 1
+            ? dispatch(setActiveIndex(0))
+            : dispatch(setActiveIndex(activeIndex + 1))
+    }
+    const previous = () => {
+        activeIndex === 0
+            ? dispatch(setActiveIndex(carouselLength - 1))
+            : dispatch(setActiveIndex(activeIndex - 1))
     }
 
-    previous = () => {
-        if (this.animating) return;
-        const nextIndex = this.state.activeIndex === 0 ? this.props.carouselItems.length - 1 : this.state.activeIndex - 1;
-        this.setState({ activeIndex: nextIndex });
+    const handleSelect = (selectedIndex, e) => {
+        dispatch(setActiveIndex(selectedIndex));
     }
-
-    goToIndex = (newIndex) => {
-        if (this.animating) return;
-        this.setState({ activeIndex: newIndex });
-    }
-    render() {
-        const { activeIndex } = this.state;
-
-        const slides = this.props.carouselItems.map((item) => {
-            return (
-                <CarouselItem
-                    onExiting={this.onExiting}
-                    onExited={this.onExited}
-                    key={item.src}
-                >
-                    <img src={item.src} alt={item.altText} />
-                    <CarouselCaption captionHeader={item.caption} />
-                </CarouselItem>
-            );
-        });
-
+    const slides = carouselItems.map((item) => {
         return (
-            <Carousel
-                activeIndex={activeIndex}
-                next={this.next}
-                previous={this.previous}
-            >
-                <CarouselIndicators
-                    items={this.props.carouselItems}
-                    activeIndex={activeIndex}
-                    onClickHandler={this.goToIndex} />
-                {slides}
-                <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-                <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-            </Carousel>
+            <CarouselItem key={item.src}>
+                <img
+                    src={item.src}
+                    alt={item.altText}
+                />
+                <CarouselCaption captionHeader={item.caption} />
+            </CarouselItem>
         );
-    }
+    })
+
+    return (
+        <Carousel
+            activeIndex={activeIndex}
+            onSelect={handleSelect}
+            next={next}
+            previous={previous}
+            ride="carousel"
+        >
+            <CarouselIndicators
+                items={carouselItems}
+                activeIndex={activeIndex}
+                onClickHandler={handleSelect}
+            />
+            {slides}
+            <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+            <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+        </Carousel>
+    );
 }
 
 export default CarouselComponent
