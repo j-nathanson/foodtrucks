@@ -12,6 +12,7 @@ function PriceEstimator(props) {
     const entreeCost = useSelector(state => state.estimatorReducer.costs.entreeCost);
     const dessertCost = useSelector(state => state.estimatorReducer.costs.dessertCost);
 
+    // Boolean values
     const isSideChecked = useSelector(state => state.estimatorReducer.isSideChecked);
     const isEntreeChecked = useSelector(state => state.estimatorReducer.isEntreeChecked);
     const isDessertChecked = useSelector(state => state.estimatorReducer.isDessertChecked);
@@ -56,37 +57,41 @@ function PriceEstimator(props) {
                     <span>500</span>
                 </Col>
             </Row>
+            <Row className="justify-content-center">
+                <h3>what will you serve?</h3>
+            </Row>
+            <Row className="mb-5">
+                <Col xs="12" sm="8" md="6" className="mx-auto btn-box">
 
-        </Container>
+                    <Button
+                        onClick={() => dispatch(toggleSides())}
+                        size="lg"
+                        className={isSideChecked ? "btn-info" : "btn-light btn-outline-info"}>
+                        Sides
+                    </Button>
+                    <Button
+                        onClick={() => dispatch(toggleEntrees())}
+                        size="lg"
+                        className={isEntreeChecked ? "btn-info mx-2" : "btn-light btn-outline-info mx-2"}>
+                        Entrees
+                    </Button>
+                    <Button
+                        onClick={() => dispatch(toggleDessert())}
+                        size="lg"
+                        className={isDessertChecked ? "btn-info" : "btn-light btn-outline-info"}>
+                        Dessert
+                    </Button>
+                </Col>
+
+            </Row>
+
+        </Container >
     )
 }
-
-
-//                 <Row className="justify-content-center">
-//                     <h3>what will you serve?</h3>
-//                 </Row>
 
 //                 <Row className="mb-5">
 //                     <Col xs="12" sm="8" md="6" className="mx-auto btn-box">
 
-//                         <Button
-//                             onClick={this.toggleIsSideChecked}
-//                             size="lg"
-//                             className={isSideActive ? "btn-info" : "btn-light btn-outline-info"}>
-//                             Sides
-//                         </Button>
-//                         <Button
-//                             onClick={this.toggleIsEntreeChecked}
-//                             size="lg"
-//                             className={isEntreeActive ? "btn-info mx-2" : "btn-light btn-outline-info mx-2"}>
-//                             Entrees
-//                         </Button>
-//                         <Button
-//                             onClick={this.toggleIsDessertChecked}
-//                             size="lg"
-//                             className={isDessertActive ? "btn-info" : "btn-light btn-outline-info"}>
-//                             Dessert
-//                         </Button>
 //                     </Col>
 //                 </Row>
 
