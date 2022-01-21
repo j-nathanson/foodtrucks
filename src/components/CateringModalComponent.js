@@ -4,13 +4,12 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
 import { postFeedback } from '../redux/formSlice';
 import { useDispatch } from 'react-redux';
 
+// Validators
 const required = val => val && val.length;
 const maxLength = len => val => !val || (val.length <= len);
 const minLength = len => val => val && (val.length >= len);
 const emailPattern = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 const isEmail = val => emailPattern.test(val);
-
-// TODO handle form errors
 
 function CateringModal() {
     const [isModalOpen, setModal] = useState(false);
@@ -22,8 +21,6 @@ function CateringModal() {
     const handleSubmit = (values) => {
         toggleModal();
         dispatch(postFeedback(values))
-
-        console.log(values);
     }
     return (
         <Container>
@@ -69,7 +66,8 @@ function CateringModal() {
                         </div>
                         <div className='form-group'>
                             <Label htmlFor='date'>Date of Event</Label>
-                            <Control.text type='date' model='.date' id='date' name='date' className='form-control' />
+                            <Control.text type='date' model='.date' id='date' name='date' className='form-control' validators={{ required }} />
+                            <Errors className="text-danger" model=".date" show="touched" component="div" messages={{ required: "Required" }} />
                         </div>
                         <div className='form-group'>
                             <div className='row justify-content-center'>
@@ -80,7 +78,8 @@ function CateringModal() {
                                     <Row className='justify-content-center'>
                                         <Label htmlFor='lessThan100'>50-200</Label>
                                     </Row>
-                                    <Control.radio model='.guests' id='lessThan100' name='guests' value='small' className='form-control' />
+                                    <Control.radio model='.guests' id='lessThan100' name='guests' value='small' className='form-control' validators={{ required }} />
+                                    <Errors className="text-danger" model=".guests" show="touched" component="div" messages={{ required: "Required" }} />
                                 </Col>
                                 <Col>
                                     <Row className='justify-content-center'>
