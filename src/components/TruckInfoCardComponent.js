@@ -1,6 +1,30 @@
-import React, { Component } from "react"
+import React, { Component, useState } from "react";
 import { Card, CardBody, CardHeader, CardImg, Col } from "reactstrap";
-export default class TruckInfoCard extends Component {
+import { useSelector, useDispatch } from 'react-redux';
+
+function TruckInfoCard2(props) {
+
+    const rating = useSelector(state => state.foodTruckReducer.foodTrucks[0])
+    console.log(rating);
+    return (
+        <Col sm="12" md="6" lg="4">
+            <Card className="truck-info-card m-2">
+                <CardImg src={props.foodTruck.imgCard} alt={props.foodTruck.className}
+                />
+                <CardHeader>
+                    <h4 className="text-center">{props.foodTruck.name}</h4>
+                </CardHeader>
+                <CardBody className="p-3">
+                    <div className="row mb-2">
+
+                    </div>
+
+                </CardBody>
+            </Card>
+        </Col>
+    )
+}
+class TruckInfoCard extends Component {
 
     createStarBox = (numOfStars) => {
 
@@ -9,7 +33,7 @@ export default class TruckInfoCard extends Component {
             box.push(this.addStar(i))
         }
         return (
-            <div>{box} <i className="fa fa-yelp"></i></div>
+            <div>{box}<i className="fa fa-yelp"></i></div>
         )
     }
 
@@ -41,3 +65,5 @@ export default class TruckInfoCard extends Component {
         )
     }
 }
+
+export default TruckInfoCard2

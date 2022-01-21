@@ -1,6 +1,6 @@
 const FOOD_TRUCKS = [
     {
-        id: 1,
+        id: 0,
         name: "Big D's Grub",
         cuisine: "burgers",
         description: "Aut magni sint nam nemo quaerat et perferendis consectetur sed asperiores sequi aut dignissimos",
@@ -10,7 +10,7 @@ const FOOD_TRUCKS = [
         rating: 5
     },
     {
-        id: 2,
+        id: 1,
         name: "Tacos El Poblanito",
         cuisine: "mexican",
         description: "Hic cumque nobis et eligendi libero non nisi quia qui quaerat 33 itaque iusto ex esse nihil ad",
@@ -20,7 +20,7 @@ const FOOD_TRUCKS = [
         rating: 4
     },
     {
-        id: 3,
+        id: 2,
         name: "Stuf'd Truck",
         cuisine: "burgers",
         description: "Est placeat accusamus nam deserunt debitis ut temporibus nihil. Qui nihil delectus",
@@ -30,7 +30,7 @@ const FOOD_TRUCKS = [
         rating: 3
     },
     {
-        id: 4,
+        id: 3,
         name: "Tacos El Bronco",
         cuisine: "mexican",
         description: "Vel vero deserunt cum mollitia ipsam vel repudiandae odio ut praesentium libero!",
@@ -40,7 +40,7 @@ const FOOD_TRUCKS = [
         rating: 4
     },
     {
-        id: 5,
+        id: 4,
         name: "Poke Motion",
         cuisine: "sushi",
         description: "Non nesciunt voluptatem in corporis cupiditate sed aliquam adipisci et aliquid",
@@ -50,7 +50,7 @@ const FOOD_TRUCKS = [
         rating: 5
     },
     {
-        id: 6,
+        id: 5,
         name: "Dirty Bird",
         description: "Qui illum Quis alias voluptas id debitis consectetur in voluptatem facere est delectus",
         imgMain: "/assets/images/dirty-bird-1.jpeg",
