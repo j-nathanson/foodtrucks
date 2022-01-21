@@ -42,7 +42,7 @@ function CarouselComponent() {
             onSelect={handleSelect}
             next={next}
             previous={previous}
-            ride="carousel"
+            ride='carousel'
         >
             <CarouselIndicators
                 items={carouselItems}
@@ -50,8 +50,8 @@ function CarouselComponent() {
                 onClickHandler={handleSelect}
             />
             {slides}
-            <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-            <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+            <CarouselControl direction='prev' directionText='Previous' onClickHandler={previous} />
+            <CarouselControl direction='next' directionText='Next' onClickHandler={next} />
         </Carousel>
     );
 }

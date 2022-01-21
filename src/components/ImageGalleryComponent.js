@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Card, CardImg, CardImgOverlay, CardTitle, Container, Row } from "reactstrap";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Card, CardImg, CardImgOverlay, CardTitle, Container, Row } from 'reactstrap';
+import { useSelector } from 'react-redux';
 
 
 const renderCard = (foodTruck) => {
 
     return (
-        <Link className="col-sm-6 col-md-4 p-1" to="/ourtrucks">
+        <Link className='col-sm-6 col-md-4 p-1' to='/ourtrucks'>
             <Card key={foodTruck.id}>
                 <CardImg top src={foodTruck.imgMain} />
                 <CardImgOverlay>
@@ -24,8 +24,8 @@ function ImageGallery() {
     const directory = foodTrucks.map(foodTruck => renderCard(foodTruck))
 
     return (
-        <Container fluid className="bg-info image-gallery">
-            <Row className="text-center justify-content-center">
+        <Container fluid className='bg-info image-gallery'>
+            <Row className='text-center justify-content-center'>
                 <h2>Our Trucks</h2>
             </Row>
             <Row>
