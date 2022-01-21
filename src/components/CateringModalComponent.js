@@ -8,9 +8,8 @@ const required = val => val && val.length;
 const maxLength = len => val => !val || (val.length <= len);
 const minLength = len => val => val && (val.length >= len);
 const emailPattern = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-const isEmail = val => {
-    return emailPattern.test(val);
-}
+const isEmail = val => emailPattern.test(val);
+
 // TODO handle form errors
 
 function CateringModal() {
