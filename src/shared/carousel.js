@@ -1,4 +1,4 @@
- const CAROUSEL_ITEMS = [
+const CAROUSEL_ITEMS = [
     {
         src: '/assets/images/carousel-1.jpeg',
         altText: 'Slide 1',
@@ -17,7 +17,7 @@
     {
         src: '/assets/images/carousel-4.jpeg',
         altText: 'Slide 4',
-        caption: 'everyone loves da food'
+        caption: 'everyone loves the food'
     },
 ]
 
