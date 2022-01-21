@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Label, Modal, ModalHeader, ModalBody, Row } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { postFeedback } from '../redux/formSlice';
+import { useDispatch } from 'react-redux';
 
 const required = val => val && val.length;
 const maxLength = len => val => !val || (val.length <= len);
@@ -9,12 +11,15 @@ const minLength = len => val => val && (val.length >= len);
 
 function CateringModal() {
     const [isModalOpen, setModal] = useState(false);
+    const dispatch = useDispatch();
 
     const toggleModal = () => {
         setModal(!isModalOpen);
     }
     const handleSubmit = (values) => {
         toggleModal();
+        dispatch(postFeedback(values))
+
         console.log(values);
     }
     return (
