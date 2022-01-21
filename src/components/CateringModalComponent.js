@@ -7,6 +7,10 @@ import { useDispatch } from 'react-redux';
 const required = val => val && val.length;
 const maxLength = len => val => !val || (val.length <= len);
 const minLength = len => val => val && (val.length >= len);
+const emailPattern = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+const isEmail = val => {
+    return emailPattern.test(val);
+}
 // TODO handle form errors
 
 function CateringModal() {
@@ -37,11 +41,32 @@ function CateringModal() {
                     <LocalForm onSubmit={(values) => handleSubmit(values)} className='container'>
                         <div className='form-group'>
                             <Label htmlFor='name'>Your Name</Label>
-                            <Control.text model='.name' id='name' name='name' className='form-control' placeholder='John Truckman' />
+                            <Control.text model='.name' id='name' name='name' className='form-control' placeholder='John Truckman'
+                                validators={{
+                                    required,
+                                    minLength: minLength(2),
+                                    maxLength: maxLength(20)
+                                }} />
+                            <Errors className="text-danger" model=".name" show="touched" component="div" messages={{
+                                required: "Required",
+                                minLength: "Must be at least 2 characters",
+                                maxLength: 'Must be 20 characters or less'
+                            }}
+                            />
                         </div>
                         <div className='form-group'>
                             <Label htmlFor='email'>Your Name</Label>
-                            <Control.text type='email' model='.email' id='email' name='email' className='form-control' placeholder='gyroking99@gmail.com' />
+                            <Control.text type='email' model='.email' id='email' name='email' className='form-control' placeholder='gyroking99@gmail.com'
+                                validators={{
+                                    required,
+                                    isEmail,
+                                }} />
+                            <Errors className="text-danger" model=".email" show="touched" component="div" messages={{
+                                required: "Required",
+                                isEmail: "Please enter a valid email."
+
+                            }}
+                            />
                         </div>
                         <div className='form-group'>
                             <Label htmlFor='date'>Date of Event</Label>
