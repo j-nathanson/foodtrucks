@@ -7,8 +7,8 @@ import { useSelector } from 'react-redux';
 const renderCard = (foodTruck) => {
 
     return (
-        <Link className='col-sm-6 col-md-4 p-1' to='/ourtrucks'>
-            <Card key={foodTruck.id}>
+        <Link key={foodTruck.id} className='col-sm-6 col-md-4 p-1' to='/ourtrucks'>
+            <Card>
                 <CardImg top src={foodTruck.imgMain} />
                 <CardImgOverlay>
                     <CardTitle>{foodTruck.name}</CardTitle>
