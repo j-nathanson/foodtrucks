@@ -1,5 +1,7 @@
 # NYC Foodies Trucks
 
+[Click to see the live site here!](https://nycft.surge.sh/)
+
 A fictional food truck catering company website. User's can browse new trucks, order catering, and get live quotes for events. The aim for this project was to use React, Reactstrap, and Redux-Toolkit to implement an enjoyable website.
 ## Main Dependencies 
 
