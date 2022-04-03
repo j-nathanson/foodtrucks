@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import CAROUSEL_ITEMS from '../shared/carousel';
+import CAROUSEL_ITEMS from './carousel';
 
 const initialState = {
     carouselItems: CAROUSEL_ITEMS,

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import CATERING from '../shared/catering';
+import CATERING from './catering';
 
 const initialState = {
     guestNum: CATERING.sliderGuestValue,

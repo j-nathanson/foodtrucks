@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import FOOD_TRUCKS from '../shared/foodTrucks';
+import FOOD_TRUCKS from './foodTrucks';
 
 const initialState = {
     foodTrucks: FOOD_TRUCKS,
