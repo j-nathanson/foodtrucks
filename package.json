@@ -1,6 +1,9 @@
 {
   "name": "foodtruck-app",
   "version": "0.1.0",
+  "engines": {
+    "node": "16.13.2"
+  },
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
