@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import TEXT_OBJECTS from '../shared/textObjects';
+import TEXT_OBJECTS from '../shared/textObjects.js';
 
 const initialState = {
     textObjects: TEXT_OBJECTS
