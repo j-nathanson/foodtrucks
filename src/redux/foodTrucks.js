@@ -3,11 +3,11 @@ const FOOD_TRUCKS = [
         id: 0,
         name: "Big D's Grub",
         cuisine: "burgers",
-        description: "Aut magni sint nam nemo quaerat et perferendis consectetur sed asperiores sequi aut dignissimos",
+        description: "Hic cumque nobis et eligendi libero non nisi quia qui quaerat 33 itaque iusto ex esse nihil ad",
         imgMain: "/assets/images/big-d-1.jpeg",
         imgCard: "/assets/images/big-d-2.jpeg",
         menu: "http://www.bigdsgrub.com/menu/",
-        rating: 5
+        rating: 4
     },
     {
         id: 1,
@@ -47,7 +47,7 @@ const FOOD_TRUCKS = [
         imgMain: "/assets/images/poke-motion-1.jpeg",
         imgCard: "/assets/images/poke-motion-2.jpeg",
         menu: "https://www.pokemotionfoodtruck.com/our-bowls-1",
-        rating: 5
+        rating: 4
     },
     {
         id: 5,
